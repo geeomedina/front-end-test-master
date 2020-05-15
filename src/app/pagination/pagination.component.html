@@ -1,0 +1,13 @@
+<div>
+    <div class="container-pag">
+        <button (click)="previousPage()">
+            <img class="arrows" src="./assets/icons/arrow-left-solid.svg"/>
+        </button>
+        <button *ngFor="let page of pages" [ngClass]="{'nowPage': page === currentPage}" title="Go to page {{page}}" (click)="goToPage($event)">
+            {{page}}
+        </button>
+        <button (click)="nextPage()">
+            <img class="arrows" src="./assets/icons/arrow-right-solid.svg"/>
+        </button>
+    </div>
+<div>

@@ -1,0 +1,41 @@
+<div *ngIf="!flag" class="global">
+    <h2 *ngIf="!isNew">Update Vehicle</h2>
+    <h2 *ngIf="isNew">New Vehicle</h2>
+    <form [formGroup]="vehicleForm" (ngSubmit)="onSubmit(vehicleForm)">
+        <div>
+            <label>Plate (disabled)</label>
+            <input #plate type="text" formControlName="plate" [value]="data.plate" />
+        </div>
+
+        <div>
+            <label>Model</label>
+            <input #model type="text" formControlName="model" [value]="data.model"/>
+        </div>
+
+        <div>
+            <label>Manufacturer</label>
+            <input #manufacturer type="text" formControlName="manufacturer" [value]="data.manufacturer" />
+        </div>
+
+        <div>
+            <label>Color</label>
+            <input #color type="text" formControlName="color" [value]="data.color" />
+        </div>
+
+        <div>
+            <label class="status-label">Status</label>
+            <input type="radio" id="active" value="true" formControlName="status"/>
+            <label class="status" for="active">Active</label>
+            <input type="radio" id="inactive" value="false" formControlName="status"/>
+            <label class="status" for="inactive">Inactive</label>
+        </div>
+        <div class="col-12">
+            <button class="btn-right btn-shadow" (click)="resetAll()">Reset All</button>
+            <button class="btn-shadow" type="submit">Save</button>
+        </div>
+    </form>
+</div>
+<div *ngIf="!flag" class="car">
+    <img src="./assets/images/car.png">
+</div>
+<app-home *ngIf="flag"></app-home>

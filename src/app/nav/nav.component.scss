@@ -1,0 +1,94 @@
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .sidebar a {
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    color: #888888;
+    padding: 16px;
+    border-radius: 5px;
+  }
+   
+  .sidebar a.active {
+    background-color: #EDEDED;
+    color: #888888;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #EDEDED;
+    color: #888888;
+  }
+  
+  .sidebar a:hover {
+    background-color: #EDEDED;
+    color: #888888;
+  }
+  
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 991px) {
+    .sidebar a {
+        float: right;
+        margin-top: 25px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .img-padd {
+        width:20%;
+        max-width: 100px;
+        display: inline-block;
+    }
+
+    h1 {
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .sidebar {
+        width: 100%;
+        max-width: 200px;
+        position: fixed;
+        background-color: transparent;
+    }
+    .sidebar a {
+        display: block;
+        float: left;
+        width: 100%;
+    }
+    div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        display: none;
+    }
+    .sidebar a {
+        padding: 10px;
+    }
+}

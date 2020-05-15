@@ -1,0 +1,65 @@
+<div>
+    <div *ngIf="!activeForm" class="content">
+        <h2>Vehicle Management</h2>
+        <p class="bottom-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam mollitia, omnis incidunt quia neque illo iste ab, quod labore saepe modi? Voluptatibus quaerat tempora quae perferendis nostrum recusandae!</p>
+        <div>
+            <div class="col-6 same-line">
+                <input #search type="text" class="top-p" (keyup.enter)="searchPlate($event)" placeholder="plate search" />
+                <button (click)="searchPlate(search.value)" for="modal-0" >
+                    <img class="btnSearch" src="./assets/icons/search-solid.svg" >
+                </button>
+            </div>
+            <div class="col-6 col-right same-line">
+                <button class="button-add" (click)="openForm('add')">Add Vehicle +</button>
+            </div>
+        </div>
+        <div *ngIf="nowSearch" class="center loader">
+        </div>
+        <table *ngIf="!nowSearch">
+            <tr>
+                <th *ngFor="let title of tbHeader">
+                    {{title}}
+                </th>
+            </tr>
+            <tr class="row" *ngFor="let data of tbDatabase">
+                <td>{{data.plate}}</td>
+                <td>{{data.model}}</td>
+                <td>{{data.manufacturer}}</td>
+                <td *ngIf="data.status">
+                    <div class="round active"></div>
+                    <span>Active</span>
+                </td>
+                <td *ngIf="!data.status">
+                    <div class="round active"></div>
+                    <span>Inactive</span>
+                </td>
+                <td>
+                    <button title="Edit" (click)="openForm('edit', $event )">
+                        <img ngClass="btnEdit" src="./assets/icons/edit-regular.svg" alt="Edit vehicle"/>
+                    </button>
+                    <button (click)="modalShow($event)" title="Delete"> <!--(click)="openForm('del', $event)"-->
+                        <img ngClass="btnDelete" src="./assets/icons/trash-alt-regular.svg" alt="Delete vehicle"/>
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <span *ngIf="tbDatabase && tbDatabase.length == 0">Don't have results to this search.</span>
+        <app-pagination [currentPage]="currentPage" (changePage)="changingPage($event)"></app-pagination>
+    </div>
+    <div *ngIf="activeForm" class="content">
+        <app-vehicle [data]="rowSelected" [isNew]="newVehicle" ></app-vehicle>
+    </div>
+</div>
+
+<div *ngIf="showModal" class="modal" id="modal-0">
+    <label class="modal-bg" (click)="modalShow()">
+    </label>
+    <div class="into-modal">
+        <h2>Delete</h2>
+        <p>Do you want to delete this vehicle?</p>
+        <div class="col-center">
+            <button class="button-cancel" (click)="modalShow()">I don't</button>
+            <button class="button-delete" (click)="deleteVehicle()">Confirm</button>
+        </div>
+    </div>
+</div>

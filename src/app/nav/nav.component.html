@@ -1,0 +1,8 @@
+<div class="sidebar">
+    <img class="img-padd" src="./assets/images/alelo-logo.png"/>
+    <h1>Alelo Frota</h1>
+    <a *ngFor="let section of sections" href="{{section.href}}" title="{{section.title}}">
+        <img class="nav-icon" [src]="section.icon" [alt]="section.alt" width="20" height="20" />
+        {{section.label}}
+    </a>
+</div>

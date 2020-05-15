@@ -1,0 +1,67 @@
+.car {
+    width: 20%;
+    float: right;
+    text-align: right;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #888888;
+    display: block;
+}
+
+.status {
+    font-size: 14px;
+    font-weight: 400;
+    color: #A3A3A3;
+    display: inline-block;
+}
+
+input[type=radio] {
+    display: inline-block;
+}
+
+input[type=radio] > label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #A3A3A3;
+    display: inline-block;
+    margin-right: 16px;
+}
+
+button {
+    padding: 8px 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    color: #282828;
+}
+
+button[type=submit] {
+    background-color: #BC2F6C;
+    color: #FFFFFF;
+}
+
+.global {
+    width: 50%; 
+    display: inline-block;
+}
+
+.btn-right {
+    margin: 16px 16px 0 0;
+}
+
+@media screen and (min-width: 600px) {
+    .car {
+        width: 50%;
+    }
+
+    input[type=radio] {
+        margin-bottom: 32px;
+    }
+    
+    .status-label {
+        margin-bottom: 32px;
+    }
+}

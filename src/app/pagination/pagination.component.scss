@@ -1,0 +1,43 @@
+button{
+    background-color: transparent;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.arrows {
+    width: 100%;
+    max-width: 10px;
+}
+
+.nowPage { 
+    color: #BC2F6C;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 420px) {
+    
+}
+
+@media screen and (max-width: 600px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+    .container-pag {
+        float: right;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .container-pag {
+        float: right;
+    }
+}
+
+@media screen and (min-width: 993px) {
+    .container-pag {
+        float: right;
+        margin-top: 16px;
+    }
+}
